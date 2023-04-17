@@ -7,7 +7,7 @@ function getComputerChoice() {
     return choice;
 }
 
-function playRound(playerSelection, computerSelection) {
+function playRound(playerSelection = "", computerSelection = "") {
     playerSelection = playerSelection.toLowerCase();
     computerSelection = computerSelection.toLowerCase();
     if (playerSelection == computerSelection) {
@@ -15,34 +15,30 @@ function playRound(playerSelection, computerSelection) {
     } else if (playerSelection == "rock") {
         if (computerSelection == "paper") {
             computerScore++;
-            return ("You lose, paper beats rock!");
+            return ("You lose! Paper beats rock.");
         } else {
             playerScore++;
-            return ("You win, paper beats rock!");
+            return ("You win! Paper beats rock.");
+        }
+    } else if (playerSelection == "paper") {
+        if (computerSelection == "scissors") {
+            computerScore++;
+            return ("You lose! Scissors beats paper.");
+        } else {
+            playerScore++;
+            return ("You win! Scissors beats paper.");
         }
     } else if (playerSelection == "scissors") {
         if (computerSelection == "rock") {
             computerScore++;
-            return ("You lose, rock beats scissors!");
+            return ("You lose! Rock beats scissors.");
         } else {
             playerScore++;
-            return ("You win, rock beats scissors!");
-        }
-    } else if (playerSelection == "scissors") {
-        if (computerSelection == "paper") {
-            playerScore++;
-            return ("You win, scissors beats paper!");
-        } else {
-            computerScore++;
-            return ("You lost, scissors beat paper!");
+            return ("You win! Rock beats scissors");
         }
     }
 }
 
-function game() {
-    
-}
-
 const playerSelection = "rock";
 const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection))
+console.log(playRound(playerSelection, computerSelection));
