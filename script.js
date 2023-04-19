@@ -39,6 +39,19 @@ function playRound(playerSelection = "", computerSelection = "") {
     }
 }
 
+function game() {
+    playRound()
+    playRound()
+    playRound()
+    playRound()
+    playRound()
+    if (playerScore > computerScore) {
+        return ("Player Wins!")
+    } else {
+        return ("Computer Wins!")
+    }
+}
+
 const playerSelection = "rock";
 const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection));
+console.log(game());
