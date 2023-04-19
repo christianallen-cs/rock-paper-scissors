@@ -40,15 +40,15 @@ function playRound(playerSelection = "", computerSelection = "") {
 }
 
 function game() {
-    playRound()
-    playRound()
-    playRound()
-    playRound()
-    playRound()
+    playRound();
+    playRound();
+    playRound();
+    playRound();
+    playRound();
     if (playerScore > computerScore) {
-        return ("Player Wins!")
+        return ("Player Wins!");
     } else {
-        return ("Computer Wins!")
+        return ("Computer Wins!");
     }
 }
 
